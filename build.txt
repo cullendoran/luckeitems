@@ -1,0 +1,4 @@
+displayName = LuckE's Random Items
+author = kfasick/LuckE
+version = 0.1
+buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
