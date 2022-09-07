@@ -32,7 +32,8 @@ namespace luckeitems.Content.Items.Weapons
 			Item.shootSpeed = 10; // How fast the item shoots the projectile.
 			Item.crit = 32; // The percent chance at hitting an enemy with a crit, plus the default amount of 4.
 			Item.mana = 6; // This is how much mana the item uses.
-		}
+            Item.expert = true;
+        }
 
 		// Recipe for testing purposes
 //        public override void AddRecipes()
