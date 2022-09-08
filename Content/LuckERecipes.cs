@@ -23,6 +23,12 @@ namespace luckeitems.Content
 
             // To avoid name collisions, when a modded items is the iconic or 1st item in a recipe group, name the recipe group: ModName:ItemName
             RecipeGroup.RegisterGroup("luckeitems:MythrilBarGroup", LuckERecipeGroup);
+
+            LuckERecipeGroup = new RecipeGroup(() => $"Any Evil Bar",
+                ItemID.DemoniteBar, ItemID.CrimtaneBar);
+
+            // To avoid name collisions, when a modded items is the iconic or 1st item in a recipe group, name the recipe group: ModName:ItemName
+            RecipeGroup.RegisterGroup("luckeitems:EvilBarGroup", LuckERecipeGroup);
         }
 
 	}

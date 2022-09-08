@@ -35,11 +35,11 @@ namespace luckeitems.Content.Items.Weapons
             Item.expert = true;
         }
 
-		// Recipe for testing purposes
+//		  Recipe for testing purposes
 //        public override void AddRecipes()
 //        {
 //            Recipe recipe = CreateRecipe();
-//			recipe.AddRecipeGroup("luckeitems:MythrilBarGroup", 25);
+//			  recipe.AddRecipeGroup("luckeitems:MythrilBarGroup", 25);
 //            recipe.AddIngredient(ItemID.Ruby, 8);
 //            recipe.AddTile(TileID.MythrilAnvil);
 //            recipe.AddTile(TileID.AdamantiteForge);
