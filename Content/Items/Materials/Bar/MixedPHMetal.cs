@@ -30,6 +30,8 @@ namespace luckeitems.Content.Items.Materials.Bar
             recipe.AddRecipeGroup("luckeitems:TungstenBarGroup", 25);
             recipe.AddRecipeGroup("luckeitems:PlatinumBarGroup", 25);
             recipe.AddRecipeGroup("luckeitems:EvilBarGroup", 25);
+            recipe.AddIngredient(ItemID.MeteoriteBar, 25);
+            recipe.AddIngredient(ItemID.HellstoneBar, 25);
             recipe.AddTile(TileID.LunarBlockVortex);
             recipe.AddTile(TileID.LunarBlockSolar);
             recipe.AddTile(TileID.LunarBlockNebula);

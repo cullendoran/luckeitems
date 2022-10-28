@@ -24,8 +24,9 @@ namespace luckeitems.Content.Items.Accessories.Emblem.Combined
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
 			// Add 2 of this class damage
-			player.GetDamage(DamageClass.Generic) += 20f;
-		}
+			player.GetDamage(DamageClass.Generic) += 0.20f;
+            player.hasTitaniumStormBuff = true;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();

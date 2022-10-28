@@ -41,7 +41,7 @@ namespace luckeitems.Content.Items.Consumables
 		public override void ModifyItemLoot(ItemLoot itemLoot) {
             // We have to replicate the expert drops from MinionBossBody here
             itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<DoGatchiBuster>(), 1));
-            itemLoot.Add(ItemDropRule.NotScalingWithLuck(ModContent.ItemType<SlimedOre>(), 10));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SlimedOre>(), 1, 10, 25));
             itemLoot.Add(ItemDropRule.CoinsBasedOnNPCValue(ModContent.NPCType<LuckE>()));
 		}
 
