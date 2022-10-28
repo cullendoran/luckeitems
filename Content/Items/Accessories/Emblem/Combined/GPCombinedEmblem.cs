@@ -23,7 +23,7 @@ namespace luckeitems.Content.Items.Accessories.Emblem.Combined
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
 			// Add 2 of this class damage
-			player.GetDamage(DamageClass.Generic) += 0.4f;
+			player.GetDamage(DamageClass.Generic) += 0.04f;
 		}
         public override void AddRecipes()
         {

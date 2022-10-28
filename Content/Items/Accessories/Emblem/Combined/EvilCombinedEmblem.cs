@@ -23,7 +23,7 @@ namespace luckeitems.Content.Items.Accessories.Emblem.Combined
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             // Add 4% of this class damage
-            player.GetDamage(DamageClass.Generic) += 0.7f;
+            player.GetDamage(DamageClass.Generic) += 0.07f;
             if (player.ZoneCorrupt || player.ZoneCrimson)
             {
                 player.statDefense += 7;

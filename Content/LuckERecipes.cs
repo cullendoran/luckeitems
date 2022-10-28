@@ -59,6 +59,24 @@ namespace luckeitems.Content
 
             // To avoid name collisions, when a modded items is the iconic or 1st item in a recipe group, name the recipe group: ModName:ItemName
             RecipeGroup.RegisterGroup("luckeitems:PlatinumBarGroup", LuckERecipeGroup);
+
+            LuckERecipeGroup = new RecipeGroup(() => $"Any Cobalt Bar",
+                ItemID.CobaltBar, ItemID.PalladiumBar);
+
+            // To avoid name collisions, when a modded items is the iconic or 1st item in a recipe group, name the recipe group: ModName:ItemName
+            RecipeGroup.RegisterGroup("luckeitems:CobaltBarGroup", LuckERecipeGroup);
+
+            LuckERecipeGroup = new RecipeGroup(() => $"Any Mythril Bar",
+                ItemID.MythrilBar, ItemID.OrichalcumBar);
+
+            // To avoid name collisions, when a modded items is the iconic or 1st item in a recipe group, name the recipe group: ModName:ItemName
+            RecipeGroup.RegisterGroup("luckeitems:MythrilBarGroup", LuckERecipeGroup);
+
+            LuckERecipeGroup = new RecipeGroup(() => $"Any Titanium Bar",
+                ItemID.TitaniumBar, ItemID.AdamantiteBar);
+
+            // To avoid name collisions, when a modded items is the iconic or 1st item in a recipe group, name the recipe group: ModName:ItemName
+            RecipeGroup.RegisterGroup("luckeitems:TitaniumBarGroup", LuckERecipeGroup);
         }
 
 	}

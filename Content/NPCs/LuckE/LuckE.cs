@@ -1,4 +1,5 @@
 ﻿using luckeitems.Content.Items.Consumables;
+using luckeitems.Content.Items.Materials.Ore;
 using Microsoft.Xna.Framework;
 using System;
 using System.Collections.Generic;
@@ -39,7 +40,8 @@ namespace luckeitems.Content.NPCs.LuckE
 		}
 
 		public override void SetDefaults() {
-			NPC.width = 110;
+            NPC.CloneDefaults(NPCID.KingSlime);
+            NPC.width = 110;
 			NPC.height = 110;
 			NPC.damage = 1000;
 			NPC.defense = 70;
@@ -54,7 +56,6 @@ namespace luckeitems.Content.NPCs.LuckE
 			NPC.boss = true;
 			NPC.npcSlots = 10f; // Take up open spawn slots, preventing random NPCs from spawning during the fight
 
-            NPC.CloneDefaults(NPCID.KingSlime);
             // Don't set immunities like this as of 1.4:
             // NPC.buffImmune[BuffID.Confused] = true;
             // immunities are handled via dictionaries through NPCID.Sets.DebuffImmunitySets
@@ -78,7 +79,7 @@ namespace luckeitems.Content.NPCs.LuckE
 
             // Notice we use notExpertRule.OnSuccess instead of npcLoot.Add so it only applies in normal mode
             // Boss masks are spawned with 1/7 chance
-            notExpertRule.OnSuccess(ItemDropRule.Common(ItemID.LunarOre, 10));
+            notExpertRule.OnSuccess(ItemDropRule.Common(ModContent.ItemType<SlimedOre>(), 1, 10, 10));
 
             // This part is not required for a boss and is just showcasing some advanced stuff you can do with drop rules to control how items spawn
             // We make 12-15 ExampleItems spawn randomly in all directions, like the lunar pillar fragments. Hereby we need the DropOneByOne rule,

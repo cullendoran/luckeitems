@@ -25,9 +25,18 @@ namespace luckeitems.Content.Items.Materials.Bar
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<Items.Materials.Bucket.GPBucket>();
-            recipe.AddTile(TileID.Anvils);
-			recipe.AddCondition(Recipe.Condition.NearWater);
+            recipe.AddRecipeGroup("luckeitems:CobaltBarGroup", 25);
+            recipe.AddRecipeGroup("luckeitems:MythrilBarGroup", 25);
+            recipe.AddRecipeGroup("luckeitems:TitaniumBarGroup", 25);
+            recipe.AddIngredient(ItemID.HallowedBar, 25);
+            recipe.AddIngredient(ItemID.ChlorophyteBar, 25);
+            recipe.AddIngredient(ItemID.ShroomiteBar, 25);
+            recipe.AddIngredient(ItemID.SpectreBar, 25);
+            recipe.AddIngredient(ItemID.LunarBar, 25);
+            recipe.AddTile(TileID.LunarBlockVortex);
+            recipe.AddTile(TileID.LunarBlockSolar);
+            recipe.AddTile(TileID.LunarBlockNebula);
+            recipe.AddTile(TileID.LunarBlockStardust);
             recipe.Register();
         }
 	}
