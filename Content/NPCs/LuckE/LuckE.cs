@@ -72,7 +72,6 @@ namespace luckeitems.Content.NPCs.LuckE
 			NPC.boss = true;
 			NPC.npcSlots = 10f; // Take up open spawn slots, preventing random NPCs from spawning during the fight
 
-            NPC.CloneDefaults(NPCID.KingSlime);
             // Don't set immunities like this as of 1.4:
             // NPC.buffImmune[BuffID.Confused] = true;
             // immunities are handled via dictionaries through NPCID.Sets.DebuffImmunitySets
