@@ -72,9 +72,10 @@ namespace luckeitems.Content.NPCs.LuckE
 			NPC.boss = true;
 			NPC.npcSlots = 10f; // Take up open spawn slots, preventing random NPCs from spawning during the fight
 
-			// Don't set immunities like this as of 1.4:
-			// NPC.buffImmune[BuffID.Confused] = true;
-			// immunities are handled via dictionaries through NPCID.Sets.DebuffImmunitySets
+            NPC.CloneDefaults(NPCID.KingSlime);
+            // Don't set immunities like this as of 1.4:
+            // NPC.buffImmune[BuffID.Confused] = true;
+            // immunities are handled via dictionaries through NPCID.Sets.DebuffImmunitySets
 
 			// Custom AI, 0 is "bound town NPC" AI which slows the NPC down and changes sprite orientation towards the target
 			NPC.aiStyle = -1;
