@@ -1,5 +1,5 @@
-displayName = LuckE's Random Items
+displayName = [c/ff0000:LuckE's ] [c/006d00:Random ] [c/ffff00:Items ]
 homepage = https://github.com/cullendoran/luckeitems
 author = kfasick/LuckE
-version = 0.4.5
+version = 0.4.8
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*
