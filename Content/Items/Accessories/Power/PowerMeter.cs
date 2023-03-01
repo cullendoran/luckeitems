@@ -19,7 +19,6 @@ namespace luckeitems.Content.Items.Accessories.Power
 		public override void SetDefaults() {
 			Item.width = 24;
 			Item.height = 38;
-			Item.accessory = true;
 		}
         public override void UpdateInventory(Player player)
         {
@@ -31,7 +30,7 @@ namespace luckeitems.Content.Items.Accessories.Power
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.IronBar, 6);
+            recipe.AddRecipeGroup("luckeitems:IronBarGroup", 6);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
         }

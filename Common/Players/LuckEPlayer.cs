@@ -9,7 +9,6 @@ namespace luckeitems.Common.Players
 		public bool HasSoulOfCorruptionAcc;
         public bool HasSoulOfCrimsonAcc;
         public bool showElectricalPower;
-        public bool sBatteryAcc;
         public bool powerMeterAcc;
 
         // Always reset the accessory field to its default value here.
@@ -17,7 +16,6 @@ namespace luckeitems.Common.Players
             HasSoulOfCorruptionAcc = false;
             HasSoulOfCrimsonAcc = false;
             showElectricalPower = false;
-            sBatteryAcc = false;
             powerMeterAcc = false;
         }
 
@@ -26,11 +24,6 @@ namespace luckeitems.Common.Players
             if (powerMeterAcc)
             {
                 showElectricalPower = true;
-            }
-
-            if (sBatteryAcc)
-            {
-                Main.LocalPlayer.GetModPlayer<ElectricityResourcePlayer>().electricityResourceMax2 += 20;
             }
         }
 

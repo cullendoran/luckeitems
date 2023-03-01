@@ -10,7 +10,7 @@ namespace luckeitems.Content.Items.Accessories.Power.Storage
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Simple Battery");
-			Tooltip.SetDefault("Shows your current charge\n"
+			Tooltip.SetDefault("Gives +10 max charge while equiped\n"
 							 + "'FUNNY TEXT'\n");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -23,12 +23,12 @@ namespace luckeitems.Content.Items.Accessories.Power.Storage
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			player.GetModPlayer<LuckEPlayer>().sBatteryAcc = true;
-		}
+           player.GetModPlayer<ElectricityResourcePlayer>().electricityResourceMax2 += 10;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.CopperBar, 5);
+            recipe.AddRecipeGroup("luckeitems:CopperBarGroup", 5);
             recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
         }
