@@ -10,7 +10,7 @@ namespace luckeitems.Content.Items.Accessories.Power
 	{
 		public override void SetStaticDefaults() {
             DisplayName.SetDefault("Power Meter");
-            Tooltip.SetDefault("Shows your current charge\n"
+            Tooltip.SetDefault("Favorite this item to show your current charge\n"
                              + "'It's over 9000!'\n");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;

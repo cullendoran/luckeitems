@@ -12,7 +12,7 @@ namespace luckeitems.Content.Items.Accessories.Boss.Mech
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Mechanical Heart");
-			Tooltip.SetDefault("Increases max charge x2\n" + "Increases electricial damage by 25%\n" + "But comes with a price...\n" + "'Funny Text'\n");
+			Tooltip.SetDefault("Increases max charge by 2x\n" + "Increases electricial damage by 25%\n" + "But comes with a price...\n" + "'Funny Text'\n");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}

@@ -10,6 +10,8 @@ namespace luckeitems.Common.Players
         public bool HasSoulOfCrimsonAcc;
         public bool showElectricalPower;
         public bool powerMeterAcc;
+        public bool isEStorageItem;
+        public bool isEStorageItemEquiped;
 
         // Always reset the accessory field to its default value here.
         public override void ResetEffects() {
@@ -17,10 +19,16 @@ namespace luckeitems.Common.Players
             HasSoulOfCrimsonAcc = false;
             showElectricalPower = false;
             powerMeterAcc = false;
+            isEStorageItemEquiped = false;
+            isEStorageItem = false;
         }
 
         public override void UpdateEquips()
         {
+            if (isEStorageItem)
+            {
+                isEStorageItemEquiped = true;
+            }
             if (powerMeterAcc)
             {
                 showElectricalPower = true;

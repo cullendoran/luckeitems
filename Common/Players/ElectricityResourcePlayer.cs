@@ -13,7 +13,7 @@ namespace luckeitems.Common.Players
         public int electricityResourceMax2;
         public float electricityResourceRegenRate;
         internal int electricityResourceRegenTimer = 0;
-        public static readonly Color HealElectricityResource = new(187, 92, 201);
+        public static readonly Color HealElectricityResource = new(255, 255, 0);
 
         public override void Initialize()
         {

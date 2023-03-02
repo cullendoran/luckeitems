@@ -24,6 +24,7 @@ namespace luckeitems.Content.Items.Accessories.Power.Storage
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
            player.GetModPlayer<ElectricityResourcePlayer>().electricityResourceMax2 += 10;
+			player.GetModPlayer<LuckEPlayer>().isEStorageItem = true;
         }
         public override void AddRecipes()
         {

@@ -24,8 +24,16 @@ namespace luckeitems.Content
 			int electricCount = Main.LocalPlayer.GetModPlayer<ElectricityResourcePlayer>().electricityResourceCurrent;
             int electricCountMax = Main.LocalPlayer.GetModPlayer<ElectricityResourcePlayer>().electricityResourceMax2;
             // This is the value that will show up when viewing this display in normal play, right next to the icon
-            return electricCount > 0 ? $"{electricCount}/{electricCountMax} Charge." : "Charge is Empty!";
-		}
+			if (Main.LocalPlayer.GetModPlayer<LuckEPlayer>().isEStorageItemEquiped == true)
+			{
+                return electricCount > 0 ? $"{electricCount}/{electricCountMax} Electricity." : "No Electricity Stored!";
+            }
+			else
+			{
+                return $"No Electricity Storage Item Equipped!";
+            }
+
+        }
 
 	}
 }
