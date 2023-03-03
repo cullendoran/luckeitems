@@ -45,6 +45,14 @@ namespace luckeitems.Common.Players
         // Lets do all our logic for the custom resource here, such as limiting it, increasing it and so on.
         private void UpdateResource()
         {
+
+            if (Main.LocalPlayer.GetModPlayer<LuckEPlayer>().isEGeneratorItemEquiped)
+            {
+                if (Main.LocalPlayer.GetModPlayer<LuckEPlayer>().gelGenerator)
+                {
+
+                }
+            }
             // For our resource lets make it regen slowly over time to keep it simple, let's use exampleResourceRegenTimer to count up to whatever value we want, then increase currentResource.
             electricityResourceRegenTimer++; // Increase it by 60 per second, or 1 per tick.
 

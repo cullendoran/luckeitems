@@ -12,6 +12,9 @@ namespace luckeitems.Common.Players
         public bool powerMeterAcc;
         public bool isEStorageItem;
         public bool isEStorageItemEquiped;
+        public bool gelGenerator;
+        public bool isEGeneratorItemEquiped;
+        public bool isEGeneratorItem;
 
         // Always reset the accessory field to its default value here.
         public override void ResetEffects() {
@@ -21,6 +24,9 @@ namespace luckeitems.Common.Players
             powerMeterAcc = false;
             isEStorageItemEquiped = false;
             isEStorageItem = false;
+            isEGeneratorItemEquiped = false;
+            gelGenerator = false;
+            isEGeneratorItem = false;
         }
 
         public override void UpdateEquips()
@@ -28,6 +34,10 @@ namespace luckeitems.Common.Players
             if (isEStorageItem)
             {
                 isEStorageItemEquiped = true;
+            }
+            if (isEGeneratorItem)
+            {
+                isEGeneratorItemEquiped = true;
             }
             if (powerMeterAcc)
             {

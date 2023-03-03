@@ -10,7 +10,7 @@ namespace luckeitems.Content.Items.Accessories.Power.Storage
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Simple Battery");
-			Tooltip.SetDefault("Gives +10 max charge while equiped\n"
+			Tooltip.SetDefault("Gives +10 max electricity while equiped\n"
 							 + "'FUNNY TEXT'\n");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
