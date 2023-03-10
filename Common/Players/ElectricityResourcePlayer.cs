@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.ModLoader;
 using Microsoft.Xna.Framework;
+using IL.Terraria.GameContent;
 
 namespace luckeitems.Common.Players
 {
@@ -14,6 +15,14 @@ namespace luckeitems.Common.Players
         public float electricityResourceRegenRate;
         internal int electricityResourceRegenTimer = 0;
         public static readonly Color HealElectricityResource = new(255, 255, 0);
+        public int gelItem; // Unused
+        public float windSpeed;
+        public int windSpeedNew;
+        public int windSpeedFinal;
+        internal int eGenRetryTimer = 0;
+        internal int gelLeftTimer = 0;
+        internal int gelGenRegenTimer = 0;
+        internal int windGenRegenTimer = 0;
 
         public override void Initialize()
         {
@@ -48,22 +57,76 @@ namespace luckeitems.Common.Players
 
             if (Main.LocalPlayer.GetModPlayer<LuckEPlayer>().isEGeneratorItemEquiped)
             {
+                if (Main.LocalPlayer.GetModPlayer<LuckEPlayer>().windGenerator)
+                {
+                    windSpeed = Main.windSpeedCurrent * 100;
+                    windSpeedNew = (int)windSpeed;
+                    if (windSpeedNew < 0)
+                    {
+                        windSpeedFinal = windSpeedNew * -1;
+                    }
+                    else if (windSpeedNew > 0)
+                    {
+                        windSpeedFinal = windSpeedNew;
+                    }
+                    if (electricityResourceCurrent != electricityResourceMax2)
+                    {
+                        if (windSpeedFinal > 0)
+                        {
+                            windGenRegenTimer++;
+                        }
+                        if (windGenRegenTimer > 120)
+                        {
+                            electricityResourceCurrent += windSpeedFinal / 8;
+                            windGenRegenTimer = 0;
+                        }
+                    }
+                }
+
                 if (Main.LocalPlayer.GetModPlayer<LuckEPlayer>().gelGenerator)
                 {
+                    if (electricityResourceCurrent != electricityResourceMax2)
+                    {
+                        if (gelLeftTimer > 0)
+                        {
+                            gelGenRegenTimer++;
+                        }
 
+                        if (Player.HasItem(ItemID.PinkGel))
+                        {
+                            if (gelLeftTimer == 0)
+                            {
+                                Player.ConsumeItem(ItemID.PinkGel);
+                                gelLeftTimer = 1000;
+                            }
+                        }
+
+                        if (Player.HasItem(ItemID.Gel) && !Player.HasItem(ItemID.PinkGel))
+                        {
+
+                            if (gelLeftTimer == 0)
+                            {
+                                Player.ConsumeItem(ItemID.Gel);
+                                gelLeftTimer = 500;
+                            }
+
+                        }
+
+                        if (gelGenRegenTimer > 180 && gelLeftTimer > 0)
+                        {
+                            electricityResourceCurrent += 1;
+                            gelGenRegenTimer = 0;
+                        }
+
+                        if (gelLeftTimer > 0)
+                        {
+                            gelLeftTimer -= 1;
+                        }
+
+                    }
                 }
             }
-            // For our resource lets make it regen slowly over time to keep it simple, let's use exampleResourceRegenTimer to count up to whatever value we want, then increase currentResource.
-            electricityResourceRegenTimer++; // Increase it by 60 per second, or 1 per tick.
 
-            // A simple timer that goes up to 3 seconds, increases the exampleResourceCurrent by 1 and then resets back to 0.
-            if (electricityResourceRegenTimer > 180 / electricityResourceRegenRate)
-            {
-                electricityResourceCurrent += 1;
-                electricityResourceRegenTimer = 0;
-            }
-
-            // Limit exampleResourceCurrent from going over the limit imposed by exampleResourceMax.
             electricityResourceCurrent = Utils.Clamp(electricityResourceCurrent, 0, electricityResourceMax2);
 
         }

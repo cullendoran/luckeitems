@@ -7,11 +7,11 @@ using luckeitems.Content.Items.Materials.Electricial;
 
 namespace luckeitems.Content.Items.Accessories.Power.Storage
 {
-	public class SimpleBattery : ModItem
+	public class PlatinumBattery : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Simple Battery");
-			Tooltip.SetDefault("Gives +10 max electricity while equiped\n"
+			DisplayName.SetDefault("Platinum Battery");
+			Tooltip.SetDefault("Gives +30 max electricity while equiped\n"
 							 + "'FUNNY TEXT'\n");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -19,20 +19,20 @@ namespace luckeitems.Content.Items.Accessories.Power.Storage
 
 		public override void SetDefaults() {
 			Item.width = 28;
-			Item.height = 46;
+			Item.height = 28;
 			Item.accessory = true;
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-           player.GetModPlayer<ElectricityResourcePlayer>().electricityResourceMax2 += 10;
+			player.GetModPlayer<ElectricityResourcePlayer>().electricityResourceMax2 += 30;
 			player.GetModPlayer<LuckEPlayer>().isEStorageItem = true;
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-			recipe.AddIngredient<CopperWire>(3);
-            recipe.AddRecipeGroup("luckeitems:CopperBarGroup", 5);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddIngredient<CopperWire>(5);
+            recipe.AddRecipeGroup("luckeitems:PlatinumBarGroup", 13);
+            recipe.AddTile(TileID.WorkBenches);
             recipe.Register();
         }
     }

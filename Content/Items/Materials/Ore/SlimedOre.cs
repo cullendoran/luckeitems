@@ -8,9 +8,9 @@ namespace luckeitems.Content.Items.Materials.Ore
 	public class SlimedOre : ModItem
 	{
 		public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Slimed Ore");
+            DisplayName.SetDefault("Slimeinite");
             Tooltip.SetDefault("It's a mixture of luminite and slime.\n"
-                             + "'It's still moving...'\n");
+                             + "'DISGUSTING!'\n");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 100;
 			ItemID.Sets.SortingPriorityMaterials[Item.type] = 58;
 		}
