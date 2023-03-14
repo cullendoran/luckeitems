@@ -8,11 +8,11 @@ using luckeitems.Content.Tiles.Crafting;
 
 namespace luckeitems.Content.Items.Materials.Electricial
 {
-	public class CopperWire : ModItem
+	public class HallowedWire : ModItem
 	{
 		public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Copper Wire");
-            Tooltip.SetDefault("Copper Wire\n"
+            DisplayName.SetDefault("Hallowed Wire");
+            Tooltip.SetDefault("Hallowed Wire\n"
                              + "'FUNNY TEXT'\n");
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 99; // How many items are needed in order to research duplication of this item in Journey mode. See https://terraria.gamepedia.com/Journey_Mode/Research_list for a list of commonly used research amounts depending on item type.
 		}
@@ -26,8 +26,10 @@ namespace luckeitems.Content.Items.Materials.Electricial
 
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
-            Recipe recipe = CreateRecipe();
-            recipe.AddRecipeGroup("luckeitems:CopperBarGroup", 3);
+            Recipe recipe = CreateRecipe(3);
+            recipe.AddIngredient<CobaltWire>(3);
+            recipe.AddIngredient<TitaniumWire>(3);
+            recipe.AddIngredient(ItemID.HallowedBar, 3);
             recipe.AddTile<ElectricBench>();
             recipe.Register();
         }

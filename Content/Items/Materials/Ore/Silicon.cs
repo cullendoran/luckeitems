@@ -28,7 +28,7 @@ namespace luckeitems.Content.Items.Materials.Ore
             Recipe recipe = CreateRecipe(25);
             recipe.AddIngredient(ItemID.SandBlock, 50);
             recipe.AddIngredient(ItemID.SoulofLight, 5);
-            recipe.AddTile(TileID.AdamantiteForge);
+            recipe.AddTile(TileID.Hellforge);
             recipe.Register();
         }
 

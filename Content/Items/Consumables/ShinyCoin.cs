@@ -6,6 +6,7 @@ using Terraria.ModLoader;
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using luckeitems.Content.NPCs.LuckE;
+using luckeitems.Content.Items.Materials.Bar;
 
 namespace luckeitems.Content.Items.Consumables
 {
@@ -24,19 +25,15 @@ namespace luckeitems.Content.Items.Consumables
 		}
 		public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-			//TooltipLine line = new TooltipLine(Mod, "ShinyCoinL1", "You think you can defeat me?");
-			//line.OverrideColor = new Color(255, 87, 51);
-			//tooltips.Add(line);
-			//TooltipLine line2 = new TooltipLine(Mod, "ShinyCoinL2", "We shall see...");
-			//line2.OverrideColor = new Color(255, 87, 51);
-			//tooltips.Add(line2);
-			//TooltipLine line3 = new TooltipLine(Mod, "ShinyCoinL3", "-Creator Item-");
-			//line3.OverrideColor = new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
-			//tooltips.Add(line3);
-			
-			TooltipLine line = new TooltipLine(Mod, "ShinyCoinNo", "You should not have this... Yet...");
-			line.OverrideColor = new Color(255, 0, 0);
+			TooltipLine line = new TooltipLine(Mod, "ShinyCoinL1", "You think you can defeat me?");
+			line.OverrideColor = new Color(255, 87, 51);
 			tooltips.Add(line);
+			TooltipLine line2 = new TooltipLine(Mod, "ShinyCoinL2", "We shall see...");
+			line2.OverrideColor = new Color(255, 87, 51);
+			tooltips.Add(line2);
+			TooltipLine line3 = new TooltipLine(Mod, "ShinyCoinL3", "-Creator Item-");
+			line3.OverrideColor = new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
+			tooltips.Add(line3);
 
         }
 
@@ -56,7 +53,7 @@ namespace luckeitems.Content.Items.Consumables
 			// If you decide to use the below UseItem code, you have to include !NPC.AnyNPCs(id), as this is also the check the server does when receiving MessageID.SpawnBoss.
 			// If you want more constraints for the summon item, combine them as boolean expressions:
 			//    return !Main.dayTime && !NPC.AnyNPCs(ModContent.NPCType<MinionBossBody>()); would mean "not daytime and no MinionBossBody currently alive"
-			return !NPC.AnyNPCs(ModContent.NPCType<LuckE>()) && player.name == "LuckE";
+			return !NPC.AnyNPCs(ModContent.NPCType<LuckE>());
 		}
 
 		public override bool? UseItem(Player player) {
@@ -81,6 +78,17 @@ namespace luckeitems.Content.Items.Consumables
 			return true;
 		}
 
-		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
-	}
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient<GPBar>(20);
+            recipe.AddIngredient(ItemID.FragmentSolar, 5);
+            recipe.AddIngredient(ItemID.FragmentVortex, 5);
+            recipe.AddIngredient(ItemID.FragmentNebula, 5);
+            recipe.AddIngredient(ItemID.FragmentStardust, 5);
+            recipe.AddTile(TileID.LunarCraftingStation);
+            recipe.Register();
+        }
+        // Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
+    }
 }

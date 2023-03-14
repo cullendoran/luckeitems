@@ -11,7 +11,7 @@ namespace luckeitems.Content.Items.Accessories.Misc
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("AI Healer");
-            Tooltip.SetDefault("Auto heals when needed\n" + "Gives +2 Damage\n" + "'AI is the future.'\n");
+            Tooltip.SetDefault("Auto heals when needed\n" + "'AI is the future.'\n");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
@@ -24,15 +24,14 @@ namespace luckeitems.Content.Items.Accessories.Misc
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            player.GetDamage(DamageClass.Generic).Flat += 2;
             player.GetModPlayer<LuckEPlayer>().autoAIHealer = true;
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient<AIChip>();
-            recipe.AddIngredient<CopperWire>(50);
-            recipe.AddIngredient(ItemID.HallowedBar, 5);
+            recipe.AddIngredient<HallowedWire>(15);
+            recipe.AddIngredient<Capacitor>(4);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }

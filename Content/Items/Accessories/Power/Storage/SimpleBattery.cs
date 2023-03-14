@@ -4,6 +4,7 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using luckeitems.Common.Players;
 using luckeitems.Content.Items.Materials.Electricial;
+using luckeitems.Content.Tiles.Crafting;
 
 namespace luckeitems.Content.Items.Accessories.Power.Storage
 {
@@ -32,7 +33,7 @@ namespace luckeitems.Content.Items.Accessories.Power.Storage
             Recipe recipe = CreateRecipe();
 			recipe.AddIngredient<CopperWire>(3);
             recipe.AddRecipeGroup("luckeitems:CopperBarGroup", 5);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddTile<ElectricBench>();
             recipe.Register();
         }
     }

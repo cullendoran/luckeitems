@@ -92,7 +92,7 @@ namespace luckeitems.Common.Players
                     if (Player.statLife < Player.statLifeMax2)
                     {
                         lifeCounter = Player.statLifeMax2 - Player.statLife;
-                        if (lifeCounter <= Player.QuickHeal_GetItemToUse().healLife && !Player.HasBuff(BuffID.PotionSickness))
+                        if (lifeCounter >= Player.QuickHeal_GetItemToUse().healLife && !Player.HasBuff(BuffID.PotionSickness))
                         {
                             Player.QuickHeal();
                         }

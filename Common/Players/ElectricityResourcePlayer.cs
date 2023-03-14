@@ -54,28 +54,27 @@ namespace luckeitems.Common.Players
         // Lets do all our logic for the custom resource here, such as limiting it, increasing it and so on.
         private void UpdateResource()
         {
-
+            windSpeed = Main.windSpeedCurrent * 100;
+            windSpeedNew = (int)windSpeed;
+            if (windSpeedNew < 0)
+            {
+                windSpeedFinal = windSpeedNew * -1;
+            }
+            else if (windSpeedNew > 0)
+            {
+                windSpeedFinal = windSpeedNew;
+            }
             if (Main.LocalPlayer.GetModPlayer<LuckEPlayer>().isEGeneratorItemEquiped)
             {
                 if (Main.LocalPlayer.GetModPlayer<LuckEPlayer>().windGenerator)
                 {
-                    windSpeed = Main.windSpeedCurrent * 100;
-                    windSpeedNew = (int)windSpeed;
-                    if (windSpeedNew < 0)
-                    {
-                        windSpeedFinal = windSpeedNew * -1;
-                    }
-                    else if (windSpeedNew > 0)
-                    {
-                        windSpeedFinal = windSpeedNew;
-                    }
                     if (electricityResourceCurrent != electricityResourceMax2)
                     {
                         if (windSpeedFinal > 0)
                         {
                             windGenRegenTimer++;
                         }
-                        if (windGenRegenTimer > 120)
+                        if (windGenRegenTimer > 240)
                         {
                             electricityResourceCurrent += windSpeedFinal / 8;
                             windGenRegenTimer = 0;

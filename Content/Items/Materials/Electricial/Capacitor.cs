@@ -4,6 +4,7 @@ using Terraria.ModLoader;
 using Terraria.Net;
 using Terraria.GameContent.NetModules;
 using Terraria.GameContent.Creative;
+using luckeitems.Content.Tiles.Crafting;
 
 namespace luckeitems.Content.Items.Materials.Electricial
 {
@@ -17,7 +18,7 @@ namespace luckeitems.Content.Items.Materials.Electricial
 		}
 
 		public override void SetDefaults() {
-			Item.width = 28; // The item texture's width
+			Item.width = 12; // The item texture's width
 			Item.height = 28; // The item texture's height
 
 			Item.maxStack = 999; // The item's max stack value
@@ -28,7 +29,7 @@ namespace luckeitems.Content.Items.Materials.Electricial
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Wire, 5);
             recipe.AddRecipeGroup("luckeitems:IronBarGroup", 3);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddTile<ElectricBench>();
             recipe.Register();
         }
 

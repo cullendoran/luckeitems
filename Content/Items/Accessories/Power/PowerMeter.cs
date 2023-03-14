@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using luckeitems.Common.Players;
+using luckeitems.Content.Tiles.Crafting;
 
 namespace luckeitems.Content.Items.Accessories.Power
 {
@@ -31,7 +32,7 @@ namespace luckeitems.Content.Items.Accessories.Power
         {
             Recipe recipe = CreateRecipe();
             recipe.AddRecipeGroup("luckeitems:IronBarGroup", 6);
-            recipe.AddTile(TileID.WorkBenches);
+            recipe.AddTile<ElectricBench>();
             recipe.Register();
         }
     }

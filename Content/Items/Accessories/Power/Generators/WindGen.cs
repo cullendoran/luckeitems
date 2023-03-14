@@ -6,6 +6,7 @@ using luckeitems.Common.Players;
 using System.Collections.Generic;
 using luckeitems.Content.Items.Materials.Ore;
 using luckeitems.Content.Items.Materials.Electricial;
+using luckeitems.Content.Tiles.Crafting;
 
 namespace luckeitems.Content.Items.Accessories.Power.Generators
 {
@@ -32,7 +33,7 @@ namespace luckeitems.Content.Items.Accessories.Power.Generators
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
             tooltips.Insert(index: 4, new TooltipLine(Mod, "Wind Speed Effect", $"[c/006d00:{Main.LocalPlayer.GetModPlayer<ElectricityResourcePlayer>().windSpeedFinal / 8}] Effectiveness"));
-            tooltips.Insert(index: 4, new TooltipLine(Mod, "Wind Speed", $"[c/006d00:{Main.LocalPlayer.GetModPlayer<ElectricityResourcePlayer>().windSpeedFinal}] MPH"));
+            tooltips.Insert(index: 4, new TooltipLine(Mod, "Wind Speed", $"[c/006d00:{Main.LocalPlayer.GetModPlayer<ElectricityResourcePlayer>().windSpeedFinal / 2}] MPH"));
         }
         public override void AddRecipes()
         {
@@ -41,7 +42,7 @@ namespace luckeitems.Content.Items.Accessories.Power.Generators
             recipe.AddIngredient<Motor>(1);
             recipe.AddIngredient<CopperWire>(9);
             recipe.AddRecipeGroup("luckeitems:PlatinumBarGroup", 5);
-            recipe.AddTile(TileID.WorkBenches);
+            recipe.AddTile<ElectricBench>();
             recipe.Register();
         }
     }

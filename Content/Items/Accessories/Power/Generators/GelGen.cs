@@ -6,6 +6,7 @@ using luckeitems.Common.Players;
 using System.Collections.Generic;
 using luckeitems.Content.Items.Materials.Bar;
 using luckeitems.Content.Items.Materials.Electricial;
+using luckeitems.Content.Tiles.Crafting;
 
 namespace luckeitems.Content.Items.Accessories.Power.Generators
 {
@@ -46,7 +47,7 @@ namespace luckeitems.Content.Items.Accessories.Power.Generators
             recipe.AddIngredient<Motor>(3);
             recipe.AddIngredient<CopperWire>(9);
             recipe.AddIngredient<GPBar>(5);
-            recipe.AddTile(TileID.Anvils);
+            recipe.AddTile<ElectricBench>();
             recipe.Register();
         }
     }
