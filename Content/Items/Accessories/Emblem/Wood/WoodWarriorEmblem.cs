@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using luckeitems.Common.Players;
 
 namespace luckeitems.Content.Items.Accessories.Emblem.Wood
 {
@@ -22,8 +23,7 @@ namespace luckeitems.Content.Items.Accessories.Emblem.Wood
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			// Add 2 of this class damage
-			player.GetDamage(DamageClass.Melee).Flat += 2f;
+			player.GetModPlayer<LuckEEmblemPlayer>().WoodWarriorEmblem = true;
 		}
         public override void AddRecipes()
         {

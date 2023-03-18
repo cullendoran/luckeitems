@@ -10,8 +10,7 @@ namespace luckeitems.Content.Items.Materials.Bar
 		public override void SetStaticDefaults() {
             DisplayName.SetDefault("Ascended Bar");
             Tooltip.SetDefault("A bar that has reached Ascension.\n"
-                             + "'Reach for the stars!'\n"
-                             + "WIP, THIS ITEM CURENTLY HAS ZERO USES!\n");
+                             + "'Reach for the stars!'\n");
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 25;
 			ItemID.Sets.SortingPriorityMaterials[Item.type] = 59; // Influences the inventory sort order. 59 is PlatinumBar, higher is more valuable.
 		}

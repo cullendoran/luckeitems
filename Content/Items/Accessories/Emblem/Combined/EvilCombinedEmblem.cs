@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using luckeitems.Common.Players;
 
 namespace luckeitems.Content.Items.Accessories.Emblem.Combined
 {
@@ -22,12 +23,7 @@ namespace luckeitems.Content.Items.Accessories.Emblem.Combined
 
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
-            // Add 4% of this class damage
-            player.GetDamage(DamageClass.Generic) += 0.07f;
-            if (player.ZoneCorrupt || player.ZoneCrimson)
-            {
-                player.statDefense += 7;
-            }
+            player.GetModPlayer<LuckEEmblemPlayer>().EvilCombinedEmblem = true;
         }
         public override void AddRecipes()
         {

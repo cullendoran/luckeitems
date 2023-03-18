@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using luckeitems.Common.Players;
 
 namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 {
@@ -24,12 +25,8 @@ namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			// Add 2 of this class damage
-			player.GetDamage(DamageClass.Ranged) += 0.30f;
-			player.shroomiteStealth = true;
-			player.moveSpeed += 0.12f;
-			player.GetCritChance(DamageClass.Ranged) += 25f;
-		}
+			player.GetModPlayer<LuckEEmblemPlayer>().ShroomiteRangerEmblem = true;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();

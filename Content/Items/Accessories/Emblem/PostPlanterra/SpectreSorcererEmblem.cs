@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using luckeitems.Common.Players;
 
 namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 {
@@ -24,10 +25,7 @@ namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			// Add 2 of this class damage
-			player.GetDamage(DamageClass.Magic) += 0.30f;
-			player.manaCost -= 0.13f;
-			player.statManaMax2 += 60;
+            player.GetModPlayer<LuckEEmblemPlayer>().SpectreSorcererEmblem = true;
         }
         public override void AddRecipes()
         {

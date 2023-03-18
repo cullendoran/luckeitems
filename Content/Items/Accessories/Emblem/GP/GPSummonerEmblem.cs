@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using luckeitems.Common.Players;
 
 namespace luckeitems.Content.Items.Accessories.Emblem.GP
 {
@@ -22,8 +23,7 @@ namespace luckeitems.Content.Items.Accessories.Emblem.GP
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-            // Add 4% of this class damage
-            player.GetDamage(DamageClass.Summon) += 0.4f;
+            player.GetModPlayer<LuckEEmblemPlayer>().GPSummonerEmblem = true;
         }
         public override void AddRecipes()
         {

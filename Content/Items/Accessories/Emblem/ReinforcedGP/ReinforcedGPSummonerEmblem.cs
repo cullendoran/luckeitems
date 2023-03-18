@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using System.Collections.Generic;
 
 namespace luckeitems.Content.Items.Accessories.Emblem.ReinforcedGP
 {
@@ -24,6 +25,12 @@ namespace luckeitems.Content.Items.Accessories.Emblem.ReinforcedGP
             // Add 4% of this class damage
             player.GetDamage(DamageClass.Summon) += 0.20f;
             player.hasTitaniumStormBuff = true;
+        }
+
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            tooltips.Insert(index: 2, new TooltipLine(Mod, "Deprecated Notice 2", $"[c/ff0000:HOWEVER YOU CAN STILL USE THIS ITEM BEFORE IT IS REMOVED]"));
+            tooltips.Insert(index: 2, new TooltipLine(Mod, "Deprecated Notice", $"[c/ff0000:WARNING: THIS ITEM IS NOW NO LONGER BEING UPDATED AND WILL BE REMOVED IN A FUTURE UPDATE!]"));
         }
         public override void AddRecipes()
         {

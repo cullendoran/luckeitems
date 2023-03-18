@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using luckeitems.Common.Players;
 
 namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 {
@@ -23,10 +24,7 @@ namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			// Add 2 of this class damage
-			player.GetDamage(DamageClass.Summon) += 0.30f;
-            player.moveSpeed += 0.20f;
-			player.maxMinions += 4;
+			player.GetModPlayer<LuckEEmblemPlayer>().SpookySummonerEmblem = true;
         }
         public override void AddRecipes()
         {

@@ -1,5 +1,5 @@
 displayName = [c/ff0000:LuckE's ] [c/006d00:Random ] [c/ffff00:Items ]
 homepage = https://github.com/cullendoran/luckeitems
 author = kfasick/LuckE
-version = 0.5.0.1
+version = 0.5.2
 buildIgnore = *.csproj, *.user, obj\*, bin\*, .vs\*

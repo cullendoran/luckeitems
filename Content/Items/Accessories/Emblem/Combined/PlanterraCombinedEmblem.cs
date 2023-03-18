@@ -6,12 +6,12 @@ using luckeitems.Common.Players;
 
 namespace luckeitems.Content.Items.Accessories.Emblem.Combined
 {
-	public class WoodCombinedEmblem : ModItem
+	public class PlanterraCombinedEmblem : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Wooden Emblem");
-			Tooltip.SetDefault("Increases all damage by 2\n"
-							 + "'Your the most desprate person I've seen.'\n");
+			DisplayName.SetDefault("Planterra Emblem");
+			Tooltip.SetDefault("Gives effects of other planterra emblems\n"
+                             + "'Even a soul infused plant can't stop your wrath.'\n");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
@@ -23,16 +23,16 @@ namespace luckeitems.Content.Items.Accessories.Emblem.Combined
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-            player.GetModPlayer<LuckEEmblemPlayer>().WoodCombinedEmblem = true;
+            player.GetModPlayer<LuckEEmblemPlayer>().PlanterraCombinedEmblem = true;
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<Wood.WoodWarriorEmblem>();
-            recipe.AddIngredient<Wood.WoodRangerEmblem>();
-            recipe.AddIngredient<Wood.WoodSorcererEmblem>();
-            recipe.AddIngredient<Wood.WoodSummonerEmblem>();
-            recipe.AddTile(TileID.WorkBenches);
+            recipe.AddIngredient<PostPlanterra.TurtleWarriorEmblem>();
+            recipe.AddIngredient<PostPlanterra.ShroomiteRangerEmblem>();
+            recipe.AddIngredient<PostPlanterra.SpectreSorcererEmblem>();
+            recipe.AddIngredient<PostPlanterra.SpookySummonerEmblem>();
+            recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }
     }

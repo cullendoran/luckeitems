@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using luckeitems.Common.Players;
 
 namespace luckeitems.Content.Items.Accessories.Emblem.Evil
 {
@@ -21,12 +22,7 @@ namespace luckeitems.Content.Items.Accessories.Emblem.Evil
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-            // Add 4% of this class damage
-            player.GetDamage(DamageClass.Melee) += 0.7f;
-			if (player.ZoneCorrupt || player.ZoneCrimson)
-			{
-				player.statDefense += 7;
-			}
+            player.GetModPlayer<LuckEEmblemPlayer>().EvilSorcererEmblem = true;
         }
         public override void AddRecipes()
         {

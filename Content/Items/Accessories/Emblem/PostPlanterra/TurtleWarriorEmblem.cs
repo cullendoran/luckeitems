@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using luckeitems.Common.Players;
 
 namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 {
@@ -10,7 +11,7 @@ namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Turtle Warrior Emblem");
 			Tooltip.SetDefault("Increases melee damage by 30%\n"
-                             + "Gives +12% crit chance and +20% armor penetration\n"
+                             + "Gives +12% crit chance and +15% damage reduction\n"
                              + "'I already used this joke.'\n");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -23,11 +24,8 @@ namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			// Add 2 of this class damage
-			player.GetDamage(DamageClass.Melee) += 0.30f;
-			player.GetCritChance(DamageClass.Melee) += 0.12f;
-			player.GetArmorPenetration(DamageClass.Melee) += 20f;
-		}
+            player.GetModPlayer<LuckEEmblemPlayer>().TurtleWarriorEmblem = true;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();

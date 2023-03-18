@@ -2,6 +2,7 @@
 using Terraria.ID;
 using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
+using luckeitems.Common.Players;
 
 namespace luckeitems.Content.Items.Accessories.Emblem.Combined
 {
@@ -22,16 +23,15 @@ namespace luckeitems.Content.Items.Accessories.Emblem.Combined
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			// Add 2 of this class damage
-			player.GetDamage(DamageClass.Generic) += 0.04f;
-		}
+            player.GetModPlayer<LuckEEmblemPlayer>().GPCombinedEmblem = true;
+        }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<Items.Accessories.Emblem.GP.GPWarriorEmblem>();
-            recipe.AddIngredient<Items.Accessories.Emblem.GP.GPRangerEmblem>();
-            recipe.AddIngredient<Items.Accessories.Emblem.GP.GPSorcererEmblem>();
-            recipe.AddIngredient<Items.Accessories.Emblem.GP.GPSummonerEmblem>();
+            recipe.AddIngredient<GP.GPWarriorEmblem>();
+            recipe.AddIngredient<GP.GPRangerEmblem>();
+            recipe.AddIngredient<GP.GPSorcererEmblem>();
+            recipe.AddIngredient<GP.GPSummonerEmblem>();
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
         }
