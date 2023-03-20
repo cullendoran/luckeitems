@@ -10,8 +10,9 @@ namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Turtle Warrior Emblem");
-			Tooltip.SetDefault("Increases melee damage by 30%\n"
-                             + "Gives +12% crit chance and +15% damage reduction\n"
+			Tooltip.SetDefault("Increases melee damage by 14%\n"
+                             + "Gives +12% melee crit chance and +15% damage reduction\n"
+                             + "Also gives Turtle Thorns effect\n"
                              + "'I already used this joke.'\n");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;

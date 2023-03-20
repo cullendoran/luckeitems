@@ -24,7 +24,7 @@ namespace luckeitems.Content.Items.Materials.Bar
 		// Please see Content/ExampleRecipes.cs for a detailed explanation of recipe creation.
 		public override void AddRecipes() {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient<Ore.SlimedOre>(5);
+            recipe.AddIngredient<Misc.CondensedMatter>();
             recipe.AddIngredient<MixedPHMetal>();
             recipe.AddIngredient<MixedHMetal>();
             recipe.AddTile(TileID.LunarCraftingStation);

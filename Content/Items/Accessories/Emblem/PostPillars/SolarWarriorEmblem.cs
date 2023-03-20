@@ -4,15 +4,15 @@ using Terraria.GameContent.Creative;
 using Terraria.ModLoader;
 using luckeitems.Common.Players;
 
-namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
+namespace luckeitems.Content.Items.Accessories.Emblem.PostPillars
 {
-	public class SpookySummonerEmblem : ModItem
+	public class SolarWarriorEmblem : ModItem
 	{
 		public override void SetStaticDefaults() {
-			DisplayName.SetDefault("Spooky Summoner Emblem");
-			Tooltip.SetDefault("Increases summon damage by 58%\n"
-                             + "Gives +4 max minions and +20% move speed\n"
-                             + "'It's the spooky month!'\n");
+			DisplayName.SetDefault("Solar Warrior Emblem");
+			Tooltip.SetDefault("Increases melee damage by 29%\n"
+                             + "Gives +26% melee crit chance, +3 life regen and +15% movement and melee speed\n"
+                             + "'IMA FIRING MY LAZER!'\n");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
 		}
@@ -24,13 +24,13 @@ namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 		}
 
 		public override void UpdateAccessory(Player player, bool hideVisual) {
-			player.GetModPlayer<LuckEEmblemPlayer>().SpookySummonerEmblem = true;
+			player.GetModPlayer<LuckEEmblemPlayer>().SolarWarriorEmblem = true;
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.SpookyWood, 20);
-            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.AddIngredient(ItemID.FragmentSolar, 40);
+            recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
         }
     }

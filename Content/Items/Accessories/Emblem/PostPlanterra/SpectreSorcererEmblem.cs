@@ -10,8 +10,8 @@ namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Spectre Sorcerer Emblem");
-			Tooltip.SetDefault("Increases magic damage by 30%\n"
-                             + "Gives +60 mana and -13% mana cost\n"
+			Tooltip.SetDefault("Increases magic damage by 25%\n"
+                             + "Gives +60 mana, -13% mana cost and +17% magic crit chance\n"
                              + "'Boo! Im a ghost now!'\n"
                              );
 

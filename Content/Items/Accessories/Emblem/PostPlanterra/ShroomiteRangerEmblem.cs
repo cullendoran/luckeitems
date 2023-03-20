@@ -10,9 +10,9 @@ namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
 	{
 		public override void SetStaticDefaults() {
 			DisplayName.SetDefault("Shroomite Ranger Emblem");
-			Tooltip.SetDefault("Increases ranged damage by 30%\n"
-							 + "Gives Shroomite Armor Bonus\n"
-                             + "Also gives +12% move speed and +25% ranged crit chance\n"
+			Tooltip.SetDefault("Increases ranged damage by 13%\n"
+							 + "Gives +12% move speed, +25% ranged crit chance and +20% chance not to consume ammo\n"
+                             + "Also gives Shroomite Stealth bonus\n"
                              + "'GMO Free!'\n");
 
 			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -30,7 +30,7 @@ namespace luckeitems.Content.Items.Accessories.Emblem.PostPlanterra
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.SpectreBar, 20);
+            recipe.AddIngredient(ItemID.ShroomiteBar, 20);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }

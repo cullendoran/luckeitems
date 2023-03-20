@@ -10,7 +10,7 @@ namespace luckeitems.Content.Items.Accessories.Mega
 	public class PureAscensionEmblem : ModItem
 	{
 		public override void SetStaticDefaults() {
-            DisplayName.SetDefault("Pure Ascension Emblem");
+            DisplayName.SetDefault("Ascension Emblem");
             Tooltip.SetDefault("Gives the effects of all emblems\n" + "'Godlike!'\n");
 
             CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
@@ -39,6 +39,7 @@ namespace luckeitems.Content.Items.Accessories.Mega
             recipe.AddIngredient<Emblem.Combined.GPCombinedEmblem> (1);
             recipe.AddIngredient<Emblem.Combined.EvilCombinedEmblem> (1);
             recipe.AddIngredient<Emblem.Combined.PlanterraCombinedEmblem>(1);
+			recipe.AddIngredient<Emblem.Combined.LunarCombinedEmblem>(1);
             recipe.AddTile(TileID.LunarCraftingStation);
             recipe.Register();
         }

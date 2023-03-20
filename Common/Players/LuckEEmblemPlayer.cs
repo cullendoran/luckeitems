@@ -41,6 +41,13 @@ namespace luckeitems.Common.Players
         public bool SpookySummonerEmblem;
         public bool PlanterraCombinedEmblem;
 
+        // Lunar Emblem Values
+        public bool SolarWarriorEmblem;
+        public bool VortexRangerEmblem;
+        public bool NebulaSorcererEmblem;
+        public bool StardustSummonerEmblem;
+        public bool LunarCombinedEmblem;
+
         public override void ResetEffects() 
         {
             // Emblem Misc Reset Effects
@@ -74,18 +81,29 @@ namespace luckeitems.Common.Players
             SpectreSorcererEmblem = false;
             SpookySummonerEmblem = false;
             PlanterraCombinedEmblem = false;
+
+            // Lunar Emblem Reset Effects
+            SolarWarriorEmblem = false;
+            VortexRangerEmblem = false;
+            NebulaSorcererEmblem = false;
+            StardustSummonerEmblem = false;
+            LunarCombinedEmblem = false;
+
         }
 
         public override void UpdateEquips()
         {
+
+            // Misc Emblem Effect Update Equips
             if (PureAscensionEmblem)
             {
                 Player.GetModPlayer<LuckEEmblemPlayer>().WoodCombinedEmblem = true;
                 Player.GetModPlayer<LuckEEmblemPlayer>().GPCombinedEmblem = true;
                 Player.GetModPlayer<LuckEEmblemPlayer>().EvilCombinedEmblem = true;
                 Player.GetModPlayer<LuckEEmblemPlayer>().PlanterraCombinedEmblem = true;
+                Player.GetModPlayer<LuckEEmblemPlayer>().LunarCombinedEmblem = true;
             }
-            // Misc Emblem Effect Update Equips
+
             if (EvilEmblemDefBoost)
             {
                 if (Player.ZoneCorrupt || Player.ZoneCrimson)
@@ -184,29 +202,74 @@ namespace luckeitems.Common.Players
             }
             if (TurtleWarriorEmblem)
             {
-                Player.GetDamage(DamageClass.Melee) += 0.30f;
+                Player.GetDamage(DamageClass.Melee) += 0.14f;
                 Player.GetCritChance(DamageClass.Melee) += 0.12f;
                 Player.endurance += 0.15f;
                 Player.turtleThorns = true;
             }
             if (ShroomiteRangerEmblem)
             {
-                Player.GetDamage(DamageClass.Ranged) += 0.30f;
+                Player.GetDamage(DamageClass.Ranged) += 0.13f;
                 Player.shroomiteStealth = true;
                 Player.moveSpeed += 0.12f;
                 Player.GetCritChance(DamageClass.Ranged) += 0.25f;
+                Player.ammoCost80 = true;
             }
             if (SpectreSorcererEmblem)
             {
-                Player.GetDamage(DamageClass.Magic) += 0.30f;
+                Player.GetDamage(DamageClass.Magic) += 0.25f;
+                Player.GetCritChance(DamageClass.Magic) += 0.17f;
                 Player.manaCost -= 0.13f;
                 Player.statManaMax2 += 60;
             }
             if (SpookySummonerEmblem)
             {
-                Player.GetDamage(DamageClass.Summon) += 0.30f;
+                Player.GetDamage(DamageClass.Summon) += 0.58f;
                 Player.moveSpeed += 0.20f;
                 Player.maxMinions += 4;
+            }
+
+            // Lunar Emblem Update Equips
+            if (LunarCombinedEmblem)
+            {
+                Player.GetModPlayer<LuckEEmblemPlayer>().SolarWarriorEmblem = true;
+                Player.GetModPlayer<LuckEEmblemPlayer>().VortexRangerEmblem = true;
+                Player.GetModPlayer<LuckEEmblemPlayer>().NebulaSorcererEmblem = true;
+                Player.GetModPlayer<LuckEEmblemPlayer>().StardustSummonerEmblem = true;
+            }
+            if (SolarWarriorEmblem)
+            {
+                Player.GetDamage(DamageClass.Melee) += 0.29f;
+                Player.GetCritChance(DamageClass.Melee) += 0.26f;
+                Player.GetAttackSpeed(DamageClass.Melee) += 0.15f;
+                Player.moveSpeed += 0.15f;
+                Player.lifeRegen += 3;
+            }
+            if (VortexRangerEmblem)
+            {
+                Player.GetDamage(DamageClass.Ranged) += 0.36f;
+                Player.vortexStealthActive = true;
+                Player.moveSpeed += 0.10f;
+                Player.GetCritChance(DamageClass.Ranged) += 0.27f;
+                Player.ammoCost75 = true;
+            }
+            if (NebulaSorcererEmblem)
+            {
+                Player.GetDamage(DamageClass.Magic) += 0.26f;
+                Player.GetCritChance(DamageClass.Magic) += 0.16f;
+                Player.manaCost -= 0.15f;
+                Player.statManaMax2 += 60;
+                Player.moveSpeed += 0.10f;
+                Player.setNebula = true;
+            }
+            if (StardustSummonerEmblem)
+            {
+                Player.GetDamage(DamageClass.Summon) += 0.66f;
+                Player.maxMinions += 5;
+                Player.whipRangeMultiplier += 0.30f;
+                Player.maxTurrets += 1;
+                Player.setStardust = true;
+
             }
         }
     }
